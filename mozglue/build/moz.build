@@ -9,7 +9,7 @@
 # If this is ever changed, update MOZ_SHARED_MOZGLUE in browser/installer/Makefile.in
 if CONFIG["JS_STANDALONE"] and not CONFIG["MOZ_MEMORY"]:
     Library("mozglue")
-elif CONFIG["OS_TARGET"] in ("WINNT", "Darwin", "Android"):
+elif CONFIG["OS_TARGET"] in ("WINNT", "Darwin", "Android") or CONFIG["MOZ_GECKO_EMBEDDED"]:
     SharedLibrary("mozglue")
 else:
     Library("mozglue")
